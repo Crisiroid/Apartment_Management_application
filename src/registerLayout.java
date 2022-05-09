@@ -37,11 +37,9 @@ public class registerLayout {
                 System.out.println(adminName);
                 writeToDB(adminName, floorNumber, passwordUnits, unitesNumber);
                 try {
-                    File myObj = new File("aut.txt");
+                    File myObj = new File("aut.json");
                     if (myObj.createNewFile()) {
                         System.out.println("File created: " + myObj.getName());
-                    } else {
-                        System.out.println("File already exists.");
                     }
                 } catch (IOException ea) {
                     System.out.println("An error occurred.");
@@ -50,8 +48,6 @@ public class registerLayout {
                 mainLoader mainloader = new mainLoader();
                 String[] arguments = new String[] {"123"};
                 mainloader.main(arguments);
-                System.exit(1);
-                jf.dispose();
             }
         });
     }

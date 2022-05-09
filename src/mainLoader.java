@@ -1,11 +1,13 @@
 import javax.swing.*;
 import java.io.File;
-
+import java.awt.*;
+import java.awt.Toolkit;
 
 public class mainLoader {
     public static void main(String[] args){
-            File autCheck = new File("aut.txt");
+            File autCheck = new File("aut.json");
             JFrame jf = new JFrame("Apartment Management Application Register");
+            jf.setLocationRelativeTo(null);
             if(autCheck.exists()){
                 //Creating new Jframe
                 jf = new JFrame("Apartment Management Application");
