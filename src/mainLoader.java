@@ -16,11 +16,13 @@ public class mainLoader {
                 jf.setContentPane(new main_login_page().maing_login_panel);
                 //Packing and showing main Frame
                 jf.pack();
+                jf.setLocationRelativeTo(null);
                 jf.setVisible(true);
             }else{
                 jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 jf.setContentPane(new registerLayout().registerPanel);
                 jf.pack();
+                jf.setLocationRelativeTo(null);
                 jf.setVisible(true);
             }
     }

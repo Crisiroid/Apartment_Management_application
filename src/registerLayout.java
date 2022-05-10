@@ -2,10 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 public class registerLayout {
+    //main variables
+    String writeToFileStr = null;
     JFrame jf;
     //sqlite database connection variables
     static Connection C = null;
@@ -36,11 +40,20 @@ public class registerLayout {
                 String passwordUnits = regPasswordField.getText();
                 System.out.println(adminName);
                 writeToDB(adminName, floorNumber, passwordUnits, unitesNumber);
+                writeToFileStr = "{\n"+
+                                 "  name: " + adminName + "\n"+
+                                 "  number of floors: " + floorNumber + "\n"+
+                                 "  number of units: " + unitesNumber + "\n"+
+                                 "  Admin Password: " + passwordUnits + "\n"+
+                                 "}";
                 try {
                     File myObj = new File("aut.json");
                     if (myObj.createNewFile()) {
                         System.out.println("File created: " + myObj.getName());
                     }
+                    BufferedWriter filewriter = new BufferedWriter(new FileWriter("aut.json"));
+                    filewriter.write(writeToFileStr);
+
                 } catch (IOException ea) {
                     System.out.println("An error occurred.");
                     ea.printStackTrace();

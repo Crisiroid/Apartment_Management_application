@@ -43,4 +43,8 @@ public class main_login_page {
             }
         });
     }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
