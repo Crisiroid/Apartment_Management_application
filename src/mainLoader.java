@@ -14,6 +14,7 @@ public class mainLoader {
             }
     }
     public static void openFrame(Container nj, String title){
+        //Loading different pages based on Inputs
         jf = new JFrame(title);
         jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         jf.setContentPane(nj);

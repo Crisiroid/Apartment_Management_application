@@ -16,8 +16,8 @@ public class userLogin {
     JPanel userLoginPanel;
     private JLabel loginPageTopLabel;
     private JButton loginButton;
-    private static JTextField userNameField;
-    private static JPasswordField passWordField;
+    private JTextField userNameField;
+    private JPasswordField passWordField;
     private JLabel userNameLabel;
     private JLabel PasswordLabel;
 
@@ -26,11 +26,13 @@ public class userLogin {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            connect();
+                connect();
+                authenticate(userNameField.getText(), passWordField.getText());
             }
         });
     }
     public static void connect() {
+        //Opening connection to Sqlite using JDBC driver
         try {
             Class.forName("org.sqlite.JDBC");
             C = DriverManager.getConnection("jdbc:sqlite:database.db");
@@ -40,13 +42,18 @@ public class userLogin {
         }
         System.out.println("Opened database successfully");
     }
-    public static void authenticate(){
+    public static void authenticate(String userNameFieldi, String passWordFieldi){
+        //searching in database for username and password
         try{
             C.setAutoCommit(false);
             stmt = C.createStatement();
-            res = stmt.executeQuery("SELECT * from usersDetails where house_holder_phoneNumber='"+userNameField+"' and Password='"+passWordField+"';");
+            res = stmt.executeQuery("SELECT * from usersDetails where house_holder_phoneNumber='"+userNameFieldi+"' and Password='"+passWordFieldi+"';");
+            System.out.println("this is working");
+            res.close();
+            stmt.close();
+            C.close();
         }catch (Exception e){
-
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
     }
 }

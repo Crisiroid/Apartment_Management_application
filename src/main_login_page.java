@@ -30,13 +30,8 @@ public class main_login_page {
         userLoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame jf = new JFrame("User Login");
-                jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                jf.setContentPane(new userLogin().userLoginPanel);
-                jf.pack();
-                jf.setLocationRelativeTo(null);
-                jf.setVisible(true);
                 mainLoader.changeFrame();
+                mainLoader.openFrame(new userLogin().userLoginPanel, "User Login");
             }
         });
         //create an action Listener for Admin Page
