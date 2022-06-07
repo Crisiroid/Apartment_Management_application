@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="userMainPage">
+  <grid id="27dc6" binding="userMainPagePanel" layout-manager="GridLayoutManager" row-count="9" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="805" height="447"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="d5a31" class="javax.swing.JLabel" binding="nameLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Name and Last Name: "/>
+        </properties>
+      </component>
+      <component id="83f4f" class="javax.swing.JLabel" binding="nameSql">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="a41b1" class="javax.swing.JLabel" binding="IdLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="ID:"/>
+        </properties>
+      </component>
+      <component id="10fc0" class="javax.swing.JLabel" binding="idSql">
+        <constraints>
+          <grid row="1" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="42165" class="javax.swing.JLabel" binding="homeStatusSql">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="de44a" class="javax.swing.JLabel" binding="homeStatusLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="House Status: "/>
+        </properties>
+      </component>
+      <component id="33074" class="javax.swing.JButton" binding="buyOrLeaveBtn">
+        <constraints>
+          <grid row="4" column="0" row-span="2" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14442471"/>
+          <foreground color="-16777216"/>
+          <margin top="3" left="3" bottom="3" right="3"/>
+          <text value="Request to Buy or Sell The House"/>
+        </properties>
+      </component>
+      <component id="5fdcb" class="javax.swing.JButton" binding="billHistoryBtn">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14967072"/>
+          <foreground color="-16777216"/>
+          <label value="Bills History"/>
+          <margin top="3" left="3" bottom="3" right="3"/>
+          <text value="Bills History"/>
+        </properties>
+      </component>
+      <component id="ccca2" class="javax.swing.JButton" binding="paymentHistoryBtn">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-879290"/>
+          <foreground color="-16777216"/>
+          <label value="Payment History"/>
+          <margin top="3" left="3" bottom="3" right="3"/>
+          <text value="Payment History"/>
+        </properties>
+      </component>
+      <component id="b0f58" class="javax.swing.JLabel" binding="warningsLabel">
+        <constraints>
+          <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Warnings:"/>
+        </properties>
+      </component>
+      <component id="d67f7" class="javax.swing.JButton" binding="profileBtn">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="true"/>
+          <background color="-12357810"/>
+          <margin top="3" left="3" bottom="3" right="3"/>
+          <text value="Profile"/>
+        </properties>
+      </component>
+      <component id="3269c" class="javax.swing.JList" binding="warningListSql">
+        <constraints>
+          <grid row="3" column="3" row-span="5" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="2783c" class="javax.swing.JButton" binding="quitBtn">
+        <constraints>
+          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-48595"/>
+          <foreground color="-16514044"/>
+          <margin top="6" left="6" bottom="6" right="6"/>
+          <text value="EXIT"/>
+        </properties>
+      </component>
+      <component id="897ce" class="javax.swing.JLabel" binding="watermark">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Crisiroid's Apartment Management Application "/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

@@ -21,9 +21,7 @@ public class main_login_page {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "Credits: " +
-                        "\n Database and Search System: Amir Sajjad Hosein Pour " +
-                        "\n Admin Page: Maryam Ahankoob Ekbatani " +
-                        "\n User Page: Arash Danesh Nejad");
+                        "\n Amir Sajjad Hosein Pour ");
             }
         });
         //create an action Listener for User Page
@@ -38,8 +36,6 @@ public class main_login_page {
         adminLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Maryam
-                //call Designed Admin Page here
             }
         });
     }
