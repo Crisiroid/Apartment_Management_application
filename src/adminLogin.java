@@ -7,27 +7,28 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class userLogin {
+public class adminLogin {
     //sql variables
     public static Connection C = null;
     public static Statement stmt = null;
     static ResultSet res = null;
-    //swing variables
-    JPanel userLoginPanel;
-    private JLabel loginPageTopLabel;
-    private JButton loginButton;
-    private JTextField userNameField;
-    private JPasswordField passWordField;
-    private JLabel userNameLabel;
-    private JLabel PasswordLabel;
 
-    public userLogin(){
-        loginPageTopLabel.setFont(new Font("calibri", Font.BOLD, 22));
-        loginButton.addActionListener(new ActionListener() {
+    //swing variablesloginPageTopLabel
+    JPanel adminLogin_panel;
+    private JTextField adminUserNameField;
+    private JPasswordField adminPasswordField;
+    private JLabel adminUserLbel;
+    private JLabel adminPassWordLabl;
+    private JButton adminLoginBtn;
+    private JLabel adminLoginName;
+
+    public adminLogin(){
+        adminLoginName.setFont(new Font("calibri", Font.BOLD, 22));
+        adminLoginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 connect();
-                authenticate(userNameField.getText(), passWordField.getText());
+                authenticate(adminUserNameField.getText(), adminPasswordField.getText());
             }
         });
     }
@@ -53,7 +54,7 @@ public class userLogin {
                 boolean found = res.getBoolean(1);
                 if (found) {
                     mainLoader.changeFrame();
-                    mainLoader.openFrame(new userMainPage(userNameFieldi).userMainPagePanel, "User Page");
+                    //mainLoader.openFrame(new userMainPage().userMainPagePanel, "User Page");
                 } else {
                     JOptionPane.showMessageDialog(null, "We Don't have You on record. Please Call Administration");
                 }

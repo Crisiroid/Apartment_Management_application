@@ -36,6 +36,7 @@ public class main_login_page {
         adminLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                mainLoader.openFrame(new adminLogin().adminLogin_panel, "Admin Login");
             }
         });
     }
