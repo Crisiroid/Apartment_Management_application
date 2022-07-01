@@ -67,30 +67,6 @@
           <text value="Request to Buy or Sell The House"/>
         </properties>
       </component>
-      <component id="5fdcb" class="javax.swing.JButton" binding="billHistoryBtn">
-        <constraints>
-          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14967072"/>
-          <foreground color="-16777216"/>
-          <label value="Bills History"/>
-          <margin top="3" left="3" bottom="3" right="3"/>
-          <text value="Bills History"/>
-        </properties>
-      </component>
-      <component id="ccca2" class="javax.swing.JButton" binding="paymentHistoryBtn">
-        <constraints>
-          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-879290"/>
-          <foreground color="-16777216"/>
-          <label value="Payment History"/>
-          <margin top="3" left="3" bottom="3" right="3"/>
-          <text value="Payment History"/>
-        </properties>
-      </component>
       <component id="b0f58" class="javax.swing.JLabel" binding="warningsLabel">
         <constraints>
           <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>

@@ -23,8 +23,6 @@ public class userMainPage {
     private JLabel homeStatusLabel;
     private JLabel homeStatusSql;
     private JButton buyOrLeaveBtn;
-    private JButton billHistoryBtn;
-    private JButton paymentHistoryBtn;
     private JLabel warningsLabel;
     private JList warningListSql;
     private JButton profileBtn;
@@ -50,6 +48,18 @@ public class userMainPage {
             public void actionPerformed(ActionEvent e) {
                 connect();
                 sellRequest(phonenum);
+            }
+        });
+        profileBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.openFrame(new userProfilePage(phonenum).userProfilePagePanel, "User Page");
+            }
+        });
+        quitBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.changeFrame();
             }
         });
     }

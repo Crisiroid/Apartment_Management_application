@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="userProfilePage">
+  <grid id="27dc6" binding="userProfilePagePanel" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="b5def" class="javax.swing.JLabel" binding="nameAndLastNameLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Name and Last Name:"/>
+        </properties>
+      </component>
+      <component id="6eaf" class="javax.swing.JLabel" binding="nameAndLastNameSql">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="f6ae5" class="javax.swing.JLabel" binding="userPhoneNumberLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Houser Phone Number: "/>
+        </properties>
+      </component>
+      <component id="d8397" class="javax.swing.JLabel" binding="floorDetailsLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="5" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Unit Number: "/>
+        </properties>
+      </component>
+      <component id="bdfe" class="javax.swing.JLabel" binding="userPhoneNumberSql">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="4b359" class="javax.swing.JLabel" binding="floorDetailsSql">
+        <constraints>
+          <grid row="1" column="2" row-span="5" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="88e49" class="javax.swing.JLabel" binding="daysRemainingToPay">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Next rent arrives at:"/>
+        </properties>
+      </component>
+      <component id="ae302" class="javax.swing.JLabel" binding="nextRentSql">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-65531"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="92d32" class="javax.swing.JLabel" binding="waterBillLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Next Water Bill Payment Day:"/>
+        </properties>
+      </component>
+      <component id="c6a24" class="javax.swing.JLabel" binding="waterBillSql">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16356165"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="6b683" class="javax.swing.JLabel" binding="electricBillLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-4739397"/>
+          <text value="Next Electric Bill Payment Day: "/>
+        </properties>
+      </component>
+      <component id="ea418" class="javax.swing.JLabel" binding="electricBillSql">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-4489728"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="f9df2" class="javax.swing.JLabel" binding="gasBillLabel">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Next Gas Bill Payment Day:"/>
+        </properties>
+      </component>
+      <component id="b09da" class="javax.swing.JLabel" binding="gasBillSql">
+        <constraints>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-4505088"/>
+          <text value=""/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
