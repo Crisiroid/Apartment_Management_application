@@ -34,8 +34,10 @@ public class userMainPage {
         nameLabel.setFont(new Font("calibri", Font.BOLD, 22));
         IdLabel.setFont(new Font("calibri", Font.BOLD, 22));
         warningsLabel.setFont(new Font("calibri", Font.BOLD, 22));
-        watermark.setFont(new Font("calibri", Font.BOLD, 22));
         homeStatusLabel.setFont(new Font("calibri", Font.BOLD, 22));
+        nameSql.setFont(new Font("calibri", Font.BOLD, 22));
+        idSql.setFont(new Font("calibri", Font.BOLD, 22));
+        homeStatusSql.setFont(new Font("calibri", Font.BOLD, 22));
         phonenumber = phonenum;
         connect();
         fillOutForm(phonenum);
@@ -60,6 +62,7 @@ public class userMainPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mainLoader.changeFrame();
+                mainLoader.openFrame(new main_login_page().maing_login_panel, "Apartment Management Application");
             }
         });
     }
@@ -84,7 +87,8 @@ public class userMainPage {
             System.out.println("this is working");
             name_s_sql = res.getString("house_holder_name_lastName");
             is_s_sql = String.valueOf(res.getInt("Id"));
-            homeStatus_s_sql = res.getString("access_type");
+            homeStatus_s_sql = res.getString("house_rental_situation");
+            C.close();
         }catch (Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }

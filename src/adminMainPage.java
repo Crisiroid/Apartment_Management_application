@@ -18,5 +18,19 @@ public class adminMainPage {
                 mainLoader.openFrame(new userRegisterPage().userRegisterPanel, "Apartment Management Application Register Form");
             }
         });
+        logOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.changeFrame();
+                mainLoader.openFrame(new main_login_page().maing_login_panel, "Apartment Management Application");
+            }
+        });
+        viewTenantInformationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String userPhoneNumber = JOptionPane.showInputDialog("Enter user's phone number: ");
+                mainLoader.openFrame(new adminViewTenantInformationPage(userPhoneNumber).adminViewTenantInformationPanel, "View Tenant Information");
+            }
+        });
     }
 }

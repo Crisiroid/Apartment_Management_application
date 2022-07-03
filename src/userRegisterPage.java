@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -30,6 +28,8 @@ public class userRegisterPage {
     JPanel userRegisterPanel;
     private JLabel userPasswordLabel;
     private JTextField userPasswordField;
+    private JTextField ownerShipStatusField;
+    private JLabel ownerShipStatusLabel;
 
     public userRegisterPage(){
         registerLabel.setFont(new Font("calibri", Font.BOLD, 23));
@@ -37,18 +37,14 @@ public class userRegisterPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 connect();
-                writeToDB(nameAndLastNameField.getText(), phoneNumberField.getText(), housePhoneNumberField.getText(), Integer.parseInt(floorField.getText()), "user", userPasswordField.getText() ,Integer.parseInt(floorField.getText()));
-                try {
-                    File myObj = new File(phoneNumberField.getText()+"/"+"waterBills.txt");
-                    myObj = new File(phoneNumberField.getText()+"/"+"gasBills.txt");
-                    myObj = new File(phoneNumberField.getText()+"/"+"electricBills.txt");
-                    if (myObj.createNewFile()) {
-                        System.out.println("File created: " + myObj.getName());
-                    }
-                } catch (IOException ea) {
-                    System.out.println("An error occurred.");
-                    ea.printStackTrace();
-                }
+                writeToDB(nameAndLastNameField.getText(),
+                        phoneNumberField.getText(),
+                        housePhoneNumberField.getText(),
+                        Integer.parseInt(floorField.getText()),
+                        "user",
+                        userPasswordField.getText(),
+                        Integer.parseInt(floorField.getText()),
+                        ownerShipStatusField.getText());
             }
         });
     }
@@ -64,20 +60,23 @@ public class userRegisterPage {
         System.out.println("Opened database successfully");
     }
     //Writing into Database
-    public static void writeToDB(String nameLastName, String userPhoneNumber, String userHousePhoneNumber, int floor, String accessType, String passWord,  int unit){
+    public static void writeToDB(String nameLastName, String userPhoneNumber, String userHousePhoneNumber, int floor, String accessType, String passWord,  int unit, String ownerShipStatus){
         try {
             C.setAutoCommit(false);
             stmt = C.createStatement();
-            sql = "INSERT INTO usersDetails (house_holder_name_lastName, house_holder_phoneNumber, house_floor, access_type, Password, house_phone_number, house_unit) " +
-                    "VALUES ("+ nameLastName + ", "+ userPhoneNumber +", "+ floor +", "+ accessType +", "+ passWord +", "+ userHousePhoneNumber +", "+ unit +" );";
+            sql = "INSERT INTO usersDetails (house_holder_name_lastName, house_holder_phoneNumber, house_floor, access_type, Password, house_phone_number, house_unit, house_rental_situation) " +
+                    "VALUES ('"+ nameLastName + "', '"+ userPhoneNumber +"', "+ floor +", '"+ accessType +"', '"+ passWord +"', '"+ userHousePhoneNumber +"', "+ unit +", '"+ ownerShipStatus +"');";
             stmt.executeUpdate(sql);
             stmt.close();
             C.commit();
             C.close();
+            JOptionPane.showMessageDialog(null, "user created successfully!");
+            mainLoader.changeFrame();
         } catch (SQLException e) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
         System.out.println("Records created successfully");
+
     }
 }

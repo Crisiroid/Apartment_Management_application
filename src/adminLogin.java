@@ -58,7 +58,7 @@ public class adminLogin {
                 } else {
                     JOptionPane.showMessageDialog(null, "We Don't have You on record. Please Call Administration");
                 }
-
+                C.close();
             }
         }catch (Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
