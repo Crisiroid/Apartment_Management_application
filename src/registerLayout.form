@@ -8,14 +8,6 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="fd3b9" class="javax.swing.JLabel" binding="registerLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Apartment management Application Register"/>
-        </properties>
-      </component>
       <vspacer id="4b368">
         <constraints>
           <grid row="1" column="9" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -35,14 +27,6 @@
         </constraints>
         <properties>
           <text value="Admin name: "/>
-        </properties>
-      </component>
-      <component id="c9b8a" class="javax.swing.JLabel" binding="unitNum">
-        <constraints>
-          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Number of units: "/>
         </properties>
       </component>
       <component id="ac9e4" class="javax.swing.JLabel">
@@ -99,6 +83,22 @@
           </grid>
         </constraints>
         <properties/>
+      </component>
+      <component id="15280" class="javax.swing.JLabel" binding="registerLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Apartment management Application Register"/>
+        </properties>
+      </component>
+      <component id="c9b8a" class="javax.swing.JLabel" binding="unitNum">
+        <constraints>
+          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Number of units: "/>
+        </properties>
       </component>
     </children>
   </grid>

@@ -14,9 +14,9 @@ public class registerLayout {
     //sqlite database connection variables
     static Connection C = null;
     static String sql = null;
-    JPanel registerPanel;
     static Statement stmt = null;
     //swing related variables
+    JPanel registerPanel;
     private JLabel registerLabel;
     private JLabel regAdminName;
     private JLabel regPass;

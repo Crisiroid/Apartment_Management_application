@@ -48,13 +48,13 @@ public class adminLogin {
         try{
             C.setAutoCommit(false);
             stmt = C.createStatement();
-            res = stmt.executeQuery("SELECT EXISTS(SELECT 1 FROM usersDetails where house_holder_phoneNumber='"+userNameFieldi+"' and Password='"+passWordFieldi+"');");
+            res = stmt.executeQuery("SELECT EXISTS(SELECT 1 FROM apartmentDetails where admin_name='"+userNameFieldi+"' and Password='"+passWordFieldi+"' );");
             System.out.println("this is working");
             if(res.next()){
                 boolean found = res.getBoolean(1);
                 if (found) {
                     mainLoader.changeFrame();
-                    //mainLoader.openFrame(new userMainPage().userMainPagePanel, "User Page");
+                    mainLoader.openFrame(new adminMainPage().adminMainPagePanel, "User Page");
                 } else {
                     JOptionPane.showMessageDialog(null, "We Don't have You on record. Please Call Administration");
                 }
