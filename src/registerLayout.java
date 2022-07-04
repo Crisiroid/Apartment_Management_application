@@ -51,6 +51,7 @@ public class registerLayout {
                 }
                 mainLoader mainloader = new mainLoader();
                 String[] arguments = new String[] {"123"};
+                mainloader.changeFrame();
                 mainloader.main(arguments);
             }
         });
@@ -72,7 +73,7 @@ public class registerLayout {
             C.setAutoCommit(false);
             stmt = C.createStatement();
             sql = "INSERT INTO apartmentDetails (admin_name,floor_number,password,unit_per_floor) " +
-                    "VALUES ("+ aName + ", "+ Fnum +", "+Passw+", "+ uni +" );";
+                    "VALUES ('"+ aName + "', "+ Fnum +", '"+Passw+"', "+ uni +" );";
             stmt.executeUpdate(sql);
             stmt.close();
             C.commit();

@@ -101,6 +101,7 @@ public class userMainPage {
             sql = "INSERT INTO request_list (Type,PhoneNum,AcOrDc) VALUES (" + "'Sell', '" + userNameFieldi + "', 'wating');";
             stmt.executeUpdate(sql);
             C.commit();
+            C.close();
             JOptionPane.showMessageDialog(null, "Request Submitted");
         }catch (Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage());

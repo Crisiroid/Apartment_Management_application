@@ -32,5 +32,12 @@ public class adminMainPage {
                 mainLoader.openFrame(new adminViewTenantInformationPage(userPhoneNumber).adminViewTenantInformationPanel, "View Tenant Information");
             }
         });
+        updateTenantProfileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String userPhoneNumber = JOptionPane.showInputDialog("Enter user's phone number: ");
+                mainLoader.openFrame(new userUpdateProfilePage(userPhoneNumber).userUpdateProfilePanel, "Update User Profile");
+            }
+        });
     }
 }

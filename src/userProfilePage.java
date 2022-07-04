@@ -88,6 +88,7 @@ public class userProfilePage {
             name_s_sql = res.getString("house_holder_name_lastName");
             phone_s_sql = res.getString("house_phone_number");
             floor_s_sql = res.getString("house_floor");
+            C.close();
         }catch (Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
