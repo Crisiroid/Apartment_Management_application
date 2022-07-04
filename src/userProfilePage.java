@@ -72,7 +72,7 @@ public class userProfilePage {
             Class.forName("org.sqlite.JDBC");
             C = DriverManager.getConnection("jdbc:sqlite:database.db");
         } catch ( Exception e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Opened database successfully");
@@ -90,7 +90,7 @@ public class userProfilePage {
             floor_s_sql = res.getString("house_floor");
             C.close();
         }catch (Exception e){
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
         }
     }
 }

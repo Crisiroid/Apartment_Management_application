@@ -90,7 +90,7 @@ public class userMainPage {
             homeStatus_s_sql = res.getString("house_rental_situation");
             C.close();
         }catch (Exception e){
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
         }
     }
     public static void sellRequest(String userNameFieldi){

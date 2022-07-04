@@ -62,7 +62,7 @@ public class registerLayout {
             Class.forName("org.sqlite.JDBC");
             C = DriverManager.getConnection("jdbc:sqlite:database.db");
         } catch ( Exception e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Opened database successfully");
@@ -79,7 +79,7 @@ public class registerLayout {
             C.commit();
             C.close();
         } catch (SQLException e) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Records created successfully");
