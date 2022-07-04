@@ -39,5 +39,11 @@ public class adminMainPage {
                 mainLoader.openFrame(new userUpdateProfilePage(userPhoneNumber).userUpdateProfilePanel, "Update User Profile");
             }
         });
+        viewRequestsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.openFrame(new adminViewRequests().adminViewRequestsPanel, "View Requests");
+            }
+        });
     }
 }
