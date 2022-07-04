@@ -38,7 +38,7 @@ public class adminViewRequests {
         answerToTheRequestBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            mainLoader.openFrame(new adminAnswerRequestPage().adminAnswerRequestPanel, "Answer to User's request");
             }
         });
     }

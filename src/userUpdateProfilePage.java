@@ -65,8 +65,7 @@ public class userUpdateProfilePage {
             JOptionPane.showMessageDialog(null, "Request Submitted");
             mainLoader.changeFrame();
         }catch (Exception e){
-            System.err.println( e.getClass().getName() + ": " + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Something went wrong");
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
         }
     }
 }

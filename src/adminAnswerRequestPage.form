@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="adminAnswerRequestPage">
+  <grid id="27dc6" binding="adminAnswerRequestPanel" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="bc5b9" class="javax.swing.JButton" binding="declineBtn">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1831116"/>
+          <margin top="3" left="3" bottom="3" right="3"/>
+          <text value="DECLINE"/>
+        </properties>
+      </component>
+      <component id="f2095" class="javax.swing.JTextField" binding="userPhoneNumberField">
+        <constraints>
+          <grid row="0" column="1" row-span="3" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="81ecb" class="javax.swing.JButton" binding="acceptBtn">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14442471"/>
+          <margin top="3" left="3" bottom="3" right="3"/>
+          <text value="ACCEPT"/>
+        </properties>
+      </component>
+      <component id="17f36" class="javax.swing.JLabel" binding="userPhoneNumberLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="User's phone number: "/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
