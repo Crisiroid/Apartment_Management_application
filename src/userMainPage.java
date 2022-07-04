@@ -31,6 +31,7 @@ public class userMainPage {
     public String phonenumber;
 
     public userMainPage(String phonenum){
+        //changing the font and the size of texts
         nameLabel.setFont(new Font("calibri", Font.BOLD, 22));
         IdLabel.setFont(new Font("calibri", Font.BOLD, 22));
         warningsLabel.setFont(new Font("calibri", Font.BOLD, 22));
@@ -39,12 +40,30 @@ public class userMainPage {
         idSql.setFont(new Font("calibri", Font.BOLD, 22));
         homeStatusSql.setFont(new Font("calibri", Font.BOLD, 22));
         phonenumber = phonenum;
+        //connecting and filling the form
         connect();
         fillOutForm(phonenum);
         nameSql.setText(name_s_sql);
         idSql.setText(is_s_sql);
         homeStatusSql.setText(homeStatus_s_sql);
-
+        //filling the warning list
+        connect();
+        try{
+            String query = "select * from request_list where PhoneNum = '" + phonenum + "';";
+            PreparedStatement pstmt = C.prepareStatement(query);
+            res = pstmt.executeQuery();
+            DefaultListModel DLM  = new DefaultListModel();
+            while(res.next()){
+                DLM.addElement(res.getString("Message"));
+            }
+            warningListSql.setModel(DLM);
+            pstmt.close();
+            res.close();
+            C.close();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
+        }
+        //creating button functionality
         buyOrLeaveBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,7 +124,7 @@ public class userMainPage {
             JOptionPane.showMessageDialog(null, "Request Submitted");
         }catch (Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Something went wrong");
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
         }
     }
 }
