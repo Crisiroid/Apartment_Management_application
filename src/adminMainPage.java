@@ -10,6 +10,7 @@ public class adminMainPage {
     private JButton warningsButton;
     private JButton createTenantBtn;
     JPanel adminMainPagePanel;
+    private JButton extensionOfTheRentalButton;
 
     public adminMainPage() {
         createTenantBtn.addActionListener(new ActionListener() {
@@ -49,6 +50,12 @@ public class adminMainPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mainLoader.openFrame(new adminSendWarning().adminSendWarningPanel, "Send warning");
+            }
+        });
+        extensionOfTheRentalButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.openFrame(new adminExtensionOfTheRentalPage().adminExtensionOfTheRentalPanel, "Extend period");
             }
         });
     }

@@ -13,6 +13,7 @@ public class userProfilePage {
     public static String name_s_sql;
     public static String floor_s_sql;
     public static String phone_s_sql;
+
     //sql variables
     public static String sql;
     public static Connection C = null;
@@ -34,6 +35,8 @@ public class userProfilePage {
     private JLabel electricBillSql;
     private JLabel gasBillLabel;
     private JLabel gasBillSql;
+    private JLabel leaveApartmentDate;
+    private JLabel leaveApartmentSql;
     //date variables
     LocalDate today = LocalDate.now();
     LocalDate endOfMonth = today.withDayOfMonth(today.lengthOfMonth());
