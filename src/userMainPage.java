@@ -27,6 +27,7 @@ public class userMainPage {
     private JList warningListSql;
     private JButton profileBtn;
     private JButton quitBtn;
+    private JButton paymentMangementBtn;
     private JLabel watermark;
     public String phonenumber;
 
@@ -82,6 +83,12 @@ public class userMainPage {
             public void actionPerformed(ActionEvent e) {
                 mainLoader.changeFrame();
                 mainLoader.openFrame(new main_login_page().maing_login_panel, "Apartment Management Application");
+            }
+        });
+        paymentMangementBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.openFrame(new userPaymentManagementPage(phonenum).userPaymentManagementPanel, "Payments");
             }
         });
     }

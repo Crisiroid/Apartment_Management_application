@@ -47,6 +47,7 @@ public class userRegisterPage {
                         Integer.parseInt(floorField.getText()),
                         ownerShipStatusField.getText());
                 File nf = new File(phoneNumberField.getText());
+                createUserTable(phoneNumberField.getText());
             }
         });
     }
@@ -69,16 +70,32 @@ public class userRegisterPage {
             sql = "INSERT INTO usersDetails (house_holder_name_lastName, house_holder_phoneNumber, house_floor, access_type, Password, house_phone_number, house_unit, house_rental_situation) " +
                     "VALUES ('"+ nameLastName + "', '"+ userPhoneNumber +"', "+ floor +", '"+ accessType +"', '"+ passWord +"', '"+ userHousePhoneNumber +"', "+ unit +", '"+ ownerShipStatus +"');";
             stmt.executeUpdate(sql);
-            stmt.close();
             C.commit();
-            C.close();
-            JOptionPane.showMessageDialog(null, "user created successfully!");
-            mainLoader.changeFrame();
+            stmt.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Records created successfully");
+    }
+    public static void createUserTable(String phoneNumber){
+        try{
+                stmt = C.createStatement();
+                String sql = "CREATE TABLE '" + phoneNumber +
+                        "' (ID INTEGER PRIMARY KEY     AUTOINCREMENT NULL   UNIQUE," +
+                        " waterBillDate           TEXT, " +
+                        " gasBillDate            TEXT, " +
+                        " electricBillDate        TEXT, " +
+                        " rentDate         TEXT)";
+                stmt.executeUpdate(sql);
+                C.commit();
+                stmt.close();
+                C.close();
 
+        }catch ( Exception e ){
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
+        }
+        JOptionPane.showMessageDialog(null, "user created successfully!");
+        mainLoader.changeFrame();
     }
 }
