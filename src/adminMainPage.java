@@ -45,5 +45,11 @@ public class adminMainPage {
                 mainLoader.openFrame(new adminViewRequests().adminViewRequestsPanel, "View Requests");
             }
         });
+        warningsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainLoader.openFrame(new adminSendWarning().adminSendWarningPanel, "Send warning");
+            }
+        });
     }
 }
