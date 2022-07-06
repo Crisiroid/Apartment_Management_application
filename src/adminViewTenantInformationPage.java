@@ -1,11 +1,10 @@
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class adminViewTenantInformationPage {
     //normal variables
@@ -13,10 +12,12 @@ public class adminViewTenantInformationPage {
     public static String is_s_sql;
     public static String homeStatus_s_sql;
     public static String housePhoneNumber_s_sql;
+    public static String rent_s_sql;
     //sql variables
     public static String sql;
     public static Connection C = null;
     public static Statement stmt = null;
+    public static PreparedStatement pstmt = null;
     static ResultSet res = null;
     //swing variables
     JPanel adminViewTenantInformationPanel;
@@ -29,10 +30,26 @@ public class adminViewTenantInformationPage {
     private JLabel ownerShipSql;
     private JLabel phoneNumberSql;
     private JLabel housePhoneNumberSql;
+    private JTable payMentTable;
+    private JScrollPane payMentTableScroll;
+
     public adminViewTenantInformationPage(String phoneNumber){
         //connecting to database and filling out the form
         connect();
         fillOutForm(phoneNumber);
+        //filling the table
+        connect();
+        try {
+            //Filling Page Table
+            String Query = "select * from '" + phoneNumber + "';";
+            pstmt = C.prepareStatement(Query);
+            res = pstmt.executeQuery();
+            payMentTable.setModel(DbUtils.resultSetToTableModel(res));
+            C.close();
+            res.close();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
+        }
         //changing font of labels
         nameAndLastNameSql.setText(name_s_sql);
         nameAndLastNameSql.setFont(new Font("calibri", Font.BOLD, 23));
@@ -67,6 +84,7 @@ public class adminViewTenantInformationPage {
     public static void fillOutForm(String userNameFieldi){
         //searching in database for username and password
         try{
+            //Filling page fields
             C.setAutoCommit(false);
             stmt = C.createStatement();
             res = stmt.executeQuery("select * from usersDetails where house_holder_phoneNumber = '" + userNameFieldi +"';");
@@ -76,7 +94,9 @@ public class adminViewTenantInformationPage {
             is_s_sql = String.valueOf(res.getInt("Id"));
             homeStatus_s_sql = res.getString("house_rental_situation");
             housePhoneNumber_s_sql = res.getString("house_phone_number");
+            stmt.close();
             C.close();
+            res.close();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getClass().getName() + ": " + e.getMessage());
         }

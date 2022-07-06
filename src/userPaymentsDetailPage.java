@@ -20,6 +20,8 @@ public class userPaymentsDetailPage {
     private JButton payBtn;
     private JTable payTable;
     private JLabel topTextLabel;
+    private JScrollPane payTableScroll;
+
     public userPaymentsDetailPage(String phoneNumber, String type){
         topTextLabel.setText(type + " Details");
         topTextLabel.setFont(new Font("calibri", Font.BOLD, 22));
